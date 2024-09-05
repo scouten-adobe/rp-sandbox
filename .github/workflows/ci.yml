@@ -57,5 +57,11 @@ jobs:
       - name: Populate git submodules
         run: git submodule init && git submodule update
 
-      - name: Dry-run of crate publish
-        run: cargo publish --dry-run
+      - name: Dry-run of crate publish rp_sandbox_a
+        run: cargo publish --dry-run -p rp_sandbox_a
+
+      - name: Dry-run of crate publish rp_sandbox_b
+        run: cargo publish --dry-run -p rp_sandbox_b
+
+      - name: Dry-run of crate publish rp_sandbox_c
+        run: cargo publish --dry-run -p rp_sandbox_c
