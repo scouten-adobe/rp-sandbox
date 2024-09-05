@@ -16,6 +16,26 @@ _05 September 2024_
 * *(a)* I can math
 
 ### Other
+* release v0.1.0 ([#4](https://github.com/scouten-adobe/rp-sandbox/pull/4))
+* Revert and try again
+* release ([#3](https://github.com/scouten-adobe/rp-sandbox/pull/3))
+* Revert "chore: release ([#2](https://github.com/scouten-adobe/rp-sandbox/pull/2))"
+* release ([#2](https://github.com/scouten-adobe/rp-sandbox/pull/2))
+* Add description
+* release
+* nvm Didn't need the 0.0.1 nonsense
+* Maybe the names were too generic?
+
+## [0.1.0](https://github.com/scouten-adobe/rp-sandbox/releases/tag/rp_sandbox_a-v0.1.0)
+_05 September 2024_
+
+### Added
+* *(a)* Subtract
+
+### Fixed
+* *(a)* I can math
+
+### Other
 * Revert and try again
 * release ([#3](https://github.com/scouten-adobe/rp-sandbox/pull/3))
 * Revert "chore: release ([#2](https://github.com/scouten-adobe/rp-sandbox/pull/2))"
