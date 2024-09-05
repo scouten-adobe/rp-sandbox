@@ -30,3 +30,32 @@ jobs:
 
       - name: Run unit tests
         run: cargo test --all-features --verbose
+
+  publish-preflight:
+    name: Preflight crate publish
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        rust_version: [stable]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: ${{ matrix.rust_version }}
+          components: llvm-tools-preview
+
+      - name: Cache Rust dependencies
+        uses: Swatinem/rust-cache@v2
+
+      - name: Populate git submodules
+        run: git submodule init && git submodule update
+
+      - name: Dry-run of crate publish
+        run: cargo publish -p xmp_toolkit --dry-run
