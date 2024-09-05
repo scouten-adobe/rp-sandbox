@@ -22,10 +22,10 @@ dependencies_update = true
 publish = false
 
 [[package]]
-name = "a"
+name = "rp_sandbox_a"
 
 [[package]]
-name = "b"
+name = "rp_sandbox_b"
 
 [[package]]
-name = "c"
+name = "rp_sandbox_c"
