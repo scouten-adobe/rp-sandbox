@@ -1,0 +1,13 @@
+/target/
+
+Cargo.lock
+
+**/*.rs.bk
+
+.DS_Store
+.idea
+.cargo/config.toml
+
+.vscode
+
+/semver-checks/target/
