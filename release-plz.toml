@@ -19,7 +19,8 @@ trim = true
 
 [workspace]
 dependencies_update = true
-publish = false
+publish = false # Sandbox only
+release_always = false
 
 [[package]]
 name = "rp_sandbox_a"
