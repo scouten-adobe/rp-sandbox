@@ -20,3 +20,12 @@ trim = true
 [workspace]
 dependencies_update = true
 publish = false
+
+[[package]]
+name = "a"
+
+[[package]]
+name = "b"
+
+[[package]]
+name = "c"
