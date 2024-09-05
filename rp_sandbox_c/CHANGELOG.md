@@ -10,14 +10,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 _05 September 2024_
 
 ### Other
-* Add description
-* release
-* nvm Didn't need the 0.0.1 nonsense
-* Maybe the names were too generic?
-
-## [0.1.0](https://github.com/scouten-adobe/rp-sandbox/releases/tag/rp_sandbox_c-v0.1.0)
-_05 September 2024_
-
-### Other
 * nvm Didn't need the 0.0.1 nonsense
 * Maybe the names were too generic?
