@@ -19,7 +19,6 @@ trim = true
 
 [workspace]
 dependencies_update = true
-publish = false # Sandbox only
 release_always = false
 
 [[package]]
