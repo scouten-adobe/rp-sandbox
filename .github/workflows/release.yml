@@ -38,6 +38,8 @@ jobs:
 
       - name: Configure git user from GitHub token
         uses: MarcoIeni/git-config@v0.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.RELEASE_PLZ_TOKEN }}
     
       - name: Run release-plz
         run: |
