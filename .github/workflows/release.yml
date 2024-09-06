@@ -31,6 +31,14 @@ jobs:
           git: https://github.com/scouten-adobe/release-plz.git
           rev: 817bff9abaeb2d8df866a01f62bfe0de04b082fc
 
+      - name: Install binaries
+        uses: taiki-e/install-action@v2
+        with:
+          tool: cargo-semver-checks@0.34
+
+      - name: Configure git user from GitHub token
+        uses: MarcoIeni/git-config@v0.1
+    
       - name: Run release-plz
         run: |
           echo "-- Running release-plz release-pr --"
