@@ -20,7 +20,7 @@ trim = true
 [workspace]
 dependencies_update = true
 release_always = false
-features_always_increment_minor = true
+# features_always_increment_minor = true
 
 [[package]]
 name = "rp_sandbox_a"
