@@ -8,6 +8,10 @@ pub fn add6(n: u64) -> u64 {
     add3(add3(n))
 }
 
+pub fn add9(n: u64) -> u64 {
+    add6(add3(n))
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -22,5 +26,11 @@ mod tests {
     fn test_add6() {
         let result = add6(2);
         assert_eq!(result, 8);
+    }
+
+    #[test]
+    fn test_add9() {
+        let result = add9(1);
+        assert_eq!(result, 10);
     }
 }
