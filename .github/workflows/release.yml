@@ -25,13 +25,17 @@ jobs:
         uses: dtolnay/rust-toolchain@stable
 
       - name: Run release-plz
-        id: release-plz
-        uses: MarcoIeni/release-plz-action@v0.5
+        run: |
+          cargo install --git https://github.com/scouten-adobe/release-plz.git --branch features_always_increment_minor release-plz
+          release-plz release-pr --git-token ${{ secrets.RELEASE_PLZ_TOKEN }}
+          release-plz release --git-token ${{ secrets.RELEASE_PLZ_TOKEN }}
         env:
-          GITHUB_TOKEN: ${{ secrets.RELEASE_PLZ_TOKEN }}
           CARGO_REGISTRY_TOKEN: ${{ secrets.CRATES_IO_TOKEN }}
 
-      - name: Update intra-repo version references
-        if: steps.release-plz.outputs.prs_created
-        run: |
-          cargo install cargo-edit
+      # - name: Run release-plz
+      # # (Restore this when/if https://github.com/MarcoIeni/release-plz/pull/1657
+      # #  is merged.)
+      #   uses: MarcoIeni/release-plz-action@v0.5
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.RELEASE_PLZ_TOKEN }}
+      #     CARGO_REGISTRY_TOKEN: ${{ secrets.CRATES_IO_TOKEN }}
