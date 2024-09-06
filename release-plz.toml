@@ -20,8 +20,7 @@ trim = true
 [workspace]
 dependencies_update = true
 release_always = false
-# features_always_increment_minor = true
-# Waiting on https://github.com/MarcoIeni/release-plz/issues/1656
+features_always_increment_minor = true
 
 [[package]]
 name = "rp_sandbox_a"
