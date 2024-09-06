@@ -6,6 +6,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.1](https://github.com/scouten-adobe/rp-sandbox/compare/rp_sandbox_b-v0.1.0...rp_sandbox_b-v0.1.1)
+_06 September 2024_
+
+### Added
+* *(b)* Add `pub fn add6`
+
+### Other
+* *(b)* B more specific about which version of A we need
+
 ## [0.1.0](https://github.com/scouten-adobe/rp-sandbox/releases/tag/rp_sandbox_b-v0.1.0)
 _05 September 2024_
 
