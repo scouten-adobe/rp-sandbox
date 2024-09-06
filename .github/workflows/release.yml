@@ -24,10 +24,19 @@ jobs:
       - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@stable
 
-      - name: Run release-plz
+      - name: Install fork of release-plz
+        uses: taiki-e/cache-cargo-install-action@v2
+        with:
+          tool: release-plz
+          git: https://github.com/scouten-adobe/release-plz.git
+          rev: 817bff9abaeb2d8df866a01f62bfe0de04b082fc
+
+      - name: Run release-plz release-pr
         run: |
-          cargo install --git https://github.com/scouten-adobe/release-plz.git --branch features_always_increment_minor release-plz
           release-plz release-pr --git-token ${{ secrets.RELEASE_PLZ_TOKEN }}
+
+      - name: Run release-plz release
+        run: |
           release-plz release --git-token ${{ secrets.RELEASE_PLZ_TOKEN }}
         env:
           CARGO_REGISTRY_TOKEN: ${{ secrets.CRATES_IO_TOKEN }}
