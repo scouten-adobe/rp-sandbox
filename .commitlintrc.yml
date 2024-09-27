@@ -42,4 +42,3 @@ rules:
       - fix
       - feat
       - chore
-      - revert
