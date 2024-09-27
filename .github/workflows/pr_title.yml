@@ -17,20 +17,43 @@ jobs:
         env:
           PR_TITLE: ${{ github.event.pull_request.title }}
         run: |
-          if echo "$PR_TITLE" | grep -E '^chore(\(.*\))\?: release '; then
-            echo "OK: chore release pattern"
+          echo <<EOF
+          If this step fails, please change this pull request's title
+          to follow Conventional Commit conventions.
+
+          A quick summary of Conventional Commits is here:
+
+            https://www.conventionalcommits.org/en/v1.0.0/#summary
+
+          There are a few additional rules that are enforced in this project:
+
+            * The first word of the description must be capitalized.
+            * The description must not end with a period.
+            * The "type" must be one of the following exact names:
+
+                * fix
+                * feat (will cause a minor version bump)
+                * chore (will be omitted from changelog)
+
+            * The scope may be omitted. If it exists, it must be
+              one of the following exact names:
+
+                * rp_sandbox_a
+                * rp_sandbox_b
+                * rp_sandbox_c
+          EOF
+
+          if echo "$PR_TITLE" | grep -E '^chore(\(.*\))?: release '; then
+            echo "Exception / OK: chore release pattern"
             exit 0;
           fi
 
-          echo "Didn't match chore pattern"
           cargo install commitlint-rs
           set -e
 
           # Workaround for https://github.com/KeisukeYamashita/commitlint-rs/issues/355
           if echo "$PR_TITLE" | grep -E "^[a-z]+\(.*\): "; then
-            echo "Found a scope"
             echo "$PR_TITLE" | commitlint -g .commitlintrc.yml
           else
-            echo "Didn't find a scope"
-            echo "$PR_TITLE" | commitlint -g .commitlintrc.yml
+            echo "$PR_TITLE" | commitlint -g .commitlintrc.no-scope.yml
           fi
