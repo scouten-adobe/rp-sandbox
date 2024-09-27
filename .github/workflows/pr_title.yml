@@ -16,4 +16,11 @@ jobs:
       - name: Check PR title
         env:
           PR_TITLE: ${{ github.event.pull_request.title }}
-        run: echo PR title is $PR_TITLE
+        run: |
+          set -e
+          if (echo "$PR_TITLE" | grep "^chore(\(.*\))?: release ") then;
+            echo OK: chore release pattern;
+            exit 0;
+          fi
+          echo "Didn't match chore pattern"
+
