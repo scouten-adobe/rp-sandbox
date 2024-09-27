@@ -17,19 +17,9 @@ rules:
     level: warning
     length: 70
 
-  # Scope must be one of the following
-  scope:
-    level: error
-    options:
-      - rp_sandbox_a
-      - rp_sandbox_b
-      - rp_sandbox_c
-
   # Scope may be empty
-  # (NOTE: Disabled for now while we work around
-  # https://github.com/KeisukeYamashita/commitlint-rs/issues/355.)
-  # scope-empty:
-  #   level: ignore
+  scope-empty:
+    level: ignore
 
   # Subject line should exist
   subject-empty:
