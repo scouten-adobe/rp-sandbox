@@ -17,10 +17,12 @@ jobs:
         env:
           PR_TITLE: ${{ github.event.pull_request.title }}
         run: |
-          if (echo "$PR_TITLE" | grep "^chore(\(.*\))?: release ") then;
-            echo OK: chore release pattern;
+          if [ echo "$PR_TITLE" | grep "^chore(\(.*\))?: release " ]; then
+            echo "OK: chore release pattern"
             exit 0;
           fi
+
           echo "Didn't match chore pattern"
+
           cargo install commitlint-rs
           echo "$PR_TITLE" | commitlint
