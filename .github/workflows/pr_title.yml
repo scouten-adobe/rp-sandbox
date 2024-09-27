@@ -18,30 +18,33 @@ jobs:
           PR_TITLE: ${{ github.event.pull_request.title }}
         run: |
           echo <<EOF
-          If this step fails, please change this pull request's title
-          to follow Conventional Commit conventions.
-
-          A quick summary of Conventional Commits is here:
-
-            https://www.conventionalcommits.org/en/v1.0.0/#summary
-
-          There are a few additional rules that are enforced in this project:
-
-            * The first word of the description must be capitalized.
-            * The description must not end with a period.
-            * The "type" must be one of the following exact names:
-
-                * fix
-                * feat (will cause a minor version bump)
-                * chore (will be omitted from changelog)
-
-            * The scope may be omitted. If it exists, it must be
-              one of the following exact names:
-
-                * rp_sandbox_a
-                * rp_sandbox_b
-                * rp_sandbox_c
-          EOF
+          # If this step fails, please expand this step for more information.
+          #
+          # You will need to revise this pull request's title
+          # to follow Conventional Commit conventions.
+          #
+          # A quick summary of Conventional Commits is here:
+          #
+          #     https://www.conventionalcommits.org/en/v1.0.0/#summary
+          #
+          # There are a few additional rules that are enforced in this project:
+          #
+          #   * The first word of the description must be capitalized.
+          #   * The description must not end with a period.
+          #   * The "type" must be one of the following exact names:
+          #
+          #       * fix
+          #       * feat (will cause a minor version bump)
+          #       * chore (will be omitted from changelog)
+          #
+          #   * The scope may be omitted. If it exists, it must be
+          #     one of the following exact names:
+          #
+          #       * rp_sandbox_a
+          #       * rp_sandbox_b
+          #       * rp_sandbox_c
+          #
+          # ----- (end of message) -----
 
           if echo "$PR_TITLE" | grep -E '^chore(\(.*\))?: release '; then
             echo "Exception / OK: chore release pattern"
