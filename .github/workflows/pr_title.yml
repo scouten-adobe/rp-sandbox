@@ -32,5 +32,5 @@ jobs:
             echo "$PR_TITLE" | commitlint -g .commitlintrc.yml
           else
             echo "Didn't find a scope"
-            echo "$PR_TITLE" | commitlint -g .commitlintrc.yml
+            echo "$PR_TITLE" | commitlint -g .commitlintrc.no-scope.yml
           fi
