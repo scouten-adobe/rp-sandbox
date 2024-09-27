@@ -28,7 +28,9 @@ jobs:
 
           # Workaround for https://github.com/KeisukeYamashita/commitlint-rs/issues/355
           if echo "$PR_TITLE" | grep -E "^[a-z]+\(.*\): "; then
+            echo "Found a scope"
             echo "$PR_TITLE" | commitlint -g .commitlintrc.yml
           else
+            echo "Didn't find a scope"
             echo "$PR_TITLE" | commitlint -g .commitlintrc.yml
           fi
