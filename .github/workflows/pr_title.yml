@@ -17,7 +17,6 @@ jobs:
         env:
           PR_TITLE: ${{ github.event.pull_request.title }}
         run: |
-          echo <<EOF
           # If this step fails, please expand this step for more information.
           #
           # You will need to revise this pull request's title
