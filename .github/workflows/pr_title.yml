@@ -94,4 +94,4 @@ jobs:
             echo "$PR_TITLE" | commitlint -g .commitlintrc.no-scope.yml
           fi
 
-          echo "PR title matches all enforced rules."
+          echo "✅ PR title matches all enforced rules."
