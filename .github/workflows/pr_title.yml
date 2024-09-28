@@ -84,7 +84,7 @@ jobs:
 
           echo  
           echo  
-          echo --- commitlint results for PR title "$PR_TITLE" ---
+          echo --- commitlint results for PR title \"$PR_TITLE\" ---
           echo  
 
           # Workaround for https://github.com/KeisukeYamashita/commitlint-rs/issues/355
