@@ -19,31 +19,54 @@ jobs:
         run: |
           # If this step fails, please expand this step for more information.
           #
-          # You will need to revise this pull request's title
-          # to follow Conventional Commit conventions.
+          # You will need to revise this pull request's title to
+          # match the "summary" (first) line of a Conventional Commit message.
           #
-          # A quick summary of Conventional Commits is here:
+          # This helps us automatically generate a meaningful changelog.
           #
-          #     https://www.conventionalcommits.org/en/v1.0.0/#summary
+          # The summary line (and thus the PR title) must have the format:
           #
-          # There are a few additional rules that are enforced in this project:
+          #     type(scope): description
           #
-          #   * The first word of the description must be capitalized.
-          #   * The description must not end with a period.
-          #   * The "type" must be one of the following exact names:
+          # `type` describes the nature of changes you are making. This project
+          # requires the type to be one of these exact names:
           #
-          #       * fix
-          #       * feat (will cause a minor version bump)
-          #       * chore (will be omitted from changelog)
+          #    * fix
+          #    * feat (will cause a minor version bump)
+          #    * chore (will be omitted from changelog)
           #
-          #   * The scope may be omitted. If it exists, it must be
-          #     one of the following exact names:
+          # `scope` describes where the change is made. This project allows
+          # the scope to be omitted, but if it is present, it must be one of
+          # these exact names:
           #
-          #       * rp_sandbox_a
-          #       * rp_sandbox_b
-          #       * rp_sandbox_c
+          #    * rp_sandbox_a
+          #    * rp_sandbox_b
+          #    * rp_sandbox_c
           #
-          # ----- (end of message) -----
+          # If `scope` is omitted, the parenthesis must also be omitted.
+          #
+          # `description` is a short human-readable summary of the changes being made.
+          #
+          # This project enforces a few rules over and above the Conventional
+          # Commits definition of `description`:
+          #
+          #    * The `description` must be non-empty.
+          #    * The `description` must start with a capital letter or number.
+          #      (Do not start `description` with a lower-case word.)
+          #    * The `description` must not end with a period.
+          #
+          # This project does not currently enforce this restriction, but we prefer
+          # that acronyms such as JSON and YAML be capitalized as per common usage
+          # in English-language sentences.
+          #
+          # After you edit the PR title, this task will run again and the
+          # warning should go away if you have made acceptable changes.
+          #
+          # For more information on Conventional Commits, please see:
+          #
+          #    https://www.conventionalcommits.org/en/v1.0.0/
+          #
+          # ------------ (end of message) ------------
 
           if echo "$PR_TITLE" | grep -E '^chore(\(.*\))?: release '; then
             echo "Exception / OK: chore release pattern"
