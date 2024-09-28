@@ -78,13 +78,13 @@ jobs:
             exit 0;
           fi
 
-          echo "Installing commitlint-rs. Please wait ~40 seconds ..."
+          echo "Installing commitlint-rs. Please wait 30-40 seconds ..."
           cargo install --quiet commitlint-rs
           set -e
 
           echo  
           echo  
-          echo --- commitlint results for PR title: $PR_TITLE
+          echo --- commitlint results for PR title "$PR_TITLE" ---
           echo  
 
           # Workaround for https://github.com/KeisukeYamashita/commitlint-rs/issues/355
@@ -94,4 +94,4 @@ jobs:
             echo "$PR_TITLE" | commitlint -g .commitlintrc.no-scope.yml
           fi
 
-          echo "No issues. PR title matches all enforced rules."
+          echo "PR title matches all enforced rules."
