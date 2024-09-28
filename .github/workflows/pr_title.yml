@@ -82,7 +82,10 @@ jobs:
           cargo install --quiet commitlint-rs
           set -e
 
-          echo "\n\n--- commitlint found the following issues with the PR title:"
+          echo
+          echo
+          echo --- commitlint results for PR title: $PR_TITLE
+          echo
 
           # Workaround for https://github.com/KeisukeYamashita/commitlint-rs/issues/355
           if echo "$PR_TITLE" | grep -E "^[a-z]+\(.*\): "; then
