@@ -21,10 +21,10 @@ jobs:
           #
           # You will need to revise this pull request's title to
           # match the "summary" (first) line of a Conventional Commit message.
+          # This enables us to automatically generate a meaningful changelog.
           #
-          # This helps us automatically generate a meaningful changelog.
-          #
-          # The summary line (and thus the PR title) must have the format:
+          # The summary line (and thus the PR title) must have this exact format
+          # (including punctuation):
           #
           #     type(scope): description
           #
@@ -55,9 +55,14 @@ jobs:
           #      (Do not start `description` with a lower-case word.)
           #    * The `description` must not end with a period.
           #
-          # This project does not currently enforce this restriction, but we prefer
-          # that acronyms such as JSON and YAML be capitalized as per common usage
-          # in English-language sentences.
+          # This project does not currently enforce the following items, but
+          # we ask that you observe the following preferences in `description`:
+          #
+          #    * The entire description should be written and capitalized as
+          #      an English-language sentence, except (as noted earlier) that
+          #      the trailing period must be omitted.
+          #    * Any acronyms such as JSON or YAML should be capitalized as per
+          #      commonusage in English-language sentences.
           #
           # After you edit the PR title, this task will run again and the
           # warning should go away if you have made acceptable changes.
