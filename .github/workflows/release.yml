@@ -24,13 +24,6 @@ jobs:
       - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@stable
 
-      - name: Install fork of release-plz
-        uses: taiki-e/cache-cargo-install-action@v2
-        with:
-          tool: release-plz
-          git: https://github.com/scouten-adobe/release-plz.git
-          rev: 817bff9abaeb2d8df866a01f62bfe0de04b082fc
-
       - name: Run release-plz
         uses: MarcoIeni/release-plz-action@v0.5
         env:
