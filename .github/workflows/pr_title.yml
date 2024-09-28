@@ -78,14 +78,14 @@ jobs:
             exit 0;
           fi
 
-          echo "Installing commitlint-rs. Please wait ~30 seconds ..."
+          echo "Installing commitlint-rs. Please wait ~40 seconds ..."
           cargo install --quiet commitlint-rs
           set -e
 
-          echo
-          echo
+          echo  
+          echo  
           echo --- commitlint results for PR title: $PR_TITLE
-          echo
+          echo  
 
           # Workaround for https://github.com/KeisukeYamashita/commitlint-rs/issues/355
           if echo "$PR_TITLE" | grep -E "^[a-z]+\(.*\): "; then
