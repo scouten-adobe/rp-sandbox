@@ -50,7 +50,7 @@ jobs:
             exit 0;
           fi
 
-          cargo install commitlint-rs
+          cargo install --quiet commitlint-rs
           set -e
 
           # Workaround for https://github.com/KeisukeYamashita/commitlint-rs/issues/355
