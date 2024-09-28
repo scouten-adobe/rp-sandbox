@@ -78,6 +78,7 @@ jobs:
             exit 0;
           fi
 
+          echo "Installing commitlint-rs. Please wait ~30 seconds ..."
           cargo install --quiet commitlint-rs
           set -e
 
