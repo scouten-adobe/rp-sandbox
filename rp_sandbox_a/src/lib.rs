@@ -2,10 +2,6 @@ pub fn add(left: u64, right: u64) -> u64 {
     left + right
 }
 
-pub fn add3(n: u64) -> u64 {
-    n + 3
-}
-
 pub fn subtract(left: i64, right: i64) -> i64 {
     left - right
 }
@@ -18,12 +14,6 @@ mod tests {
     fn it_works() {
         let result = add(2, 2);
         assert_eq!(result, 4);
-    }
-
-    #[test]
-    fn test_add3() {
-        let result = add3(2);
-        assert_eq!(result, 5);
     }
 
     #[test]
