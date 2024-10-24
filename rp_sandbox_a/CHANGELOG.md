@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.0](https://github.com/scouten-adobe/rp-sandbox/compare/rp_sandbox_a-v0.3.0...rp_sandbox_a-v0.4.0)
+_24 October 2024_
+
+### Added
+* Revert remove fn add3"
+
 ## [0.3.0](https://github.com/scouten-adobe/rp-sandbox/compare/rp_sandbox_a-v0.2.0...rp_sandbox_a-v0.3.0)
 _01 October 2024_
 
