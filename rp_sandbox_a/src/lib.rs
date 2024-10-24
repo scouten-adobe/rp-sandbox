@@ -6,6 +6,10 @@ pub fn add3(n: u64) -> u64 {
     n + 3
 }
 
+pub fn do_stuff() {
+    println!("There, I did something");
+}
+
 pub fn subtract(left: i64, right: i64) -> i64 {
     left - right
 }
