@@ -3,30 +3,38 @@ body = """
 
 ## [{{ version | trim_start_matches(pat="v") }}]{%- if release_link -%}({{ release_link }}){% endif %}
 _{{ timestamp | date(format="%d %B %Y") }}_
-{% for group, commits in commits | group_by(attribute="group") %}
+{% for group, commits in commits | group_by(attribute="group") -%}
+{%- if group != "chore" %}
 ### {{ group | upper_first }}
-{% for commit in commits %}
+
+{% for commit in commits -%}
 {%- if commit.scope and commit.scope != package -%}
-* *({{commit.scope}})* {% if commit.breaking %}[**breaking**] {% endif %}{{ commit.message }}{%- if commit.links %} ({% for link in commit.links %}[{{link.text}}]({{link.href}}) {% endfor -%}){% endif %}
+* *({{commit.scope}})* {% if commit.breaking %}[**breaking**] {% endif %}{{ commit.message | upper_first }}{%- if commit.links %} ({% for link in commit.links %}[{{link.text}}]({{link.href}}) {% endfor -%}){% endif %}
 {% else -%}
-* {% if commit.breaking %}[**breaking**] {% endif %}{{ commit.message }}
+* {% if commit.breaking %}[**breaking**] {% endif %}{{ commit.message | upper_first }}
 {% endif -%}
-{% endfor -%}
-{% endfor %}
+{%- endfor %}
+
+{%- endif %}
+
+{%- endfor -%}
 """
-protect_breaking_commits = true
-trim = true
+
+commit_parsers = [
+  { message = "^feat", group = "added" },
+  { message = "^changed", group = "changed" },
+  { message = "^deprecated", group = "deprecated" },
+  { message = "^fix", group = "fixed" },
+  { message = "^security", group = "security" },
+  { message = "^chore", group = "chore" },
+  { message = "^update", group = "updated dependencies" },
+  { message = "^doc", group = "documented" },
+  { message = "^.*", group = "other" },
+]
 
 [workspace]
 dependencies_update = true
-release_always = false
 features_always_increment_minor = true
-
-[[package]]
-name = "rp_sandbox_a"
-
-[[package]]
-name = "rp_sandbox_b"
-
-[[package]]
-name = "rp_sandbox_c"
+pr_labels = ["release"]
+release_always = false
+release_commits = "^(feat|fix|update|doc)[(:]"

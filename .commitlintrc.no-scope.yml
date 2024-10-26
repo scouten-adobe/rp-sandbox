@@ -17,9 +17,10 @@ rules:
     level: warning
     length: 70
 
-  # Scope may be empty
-  scope-empty:
-    level: ignore
+  # Scope is not allowed
+  scope:
+    level: error
+    options: []
 
   # Subject line should exist
   subject-empty:
