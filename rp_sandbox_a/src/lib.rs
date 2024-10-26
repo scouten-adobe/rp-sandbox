@@ -7,6 +7,7 @@ pub fn add3(n: u64) -> u64 {
 }
 
 pub fn add5(n: u64) -> u64 {
+    // useless comment
     n + 5
 }
 
