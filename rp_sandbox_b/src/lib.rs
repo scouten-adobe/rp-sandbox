@@ -9,7 +9,7 @@ pub fn add6(n: u64) -> u64 {
 }
 
 pub fn add9(n: u64) -> u64 {
-    add6(add3(n))
+    add3(add6(n))
 }
 
 #[cfg(test)]
