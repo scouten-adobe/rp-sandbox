@@ -53,6 +53,6 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.RELEASE_PLZ_TOKEN }}
 
-      - name: Identify release tag
+      - name: Look for release tag for rp_sandbox_a
         run: |
-          git --no-pager show --name-only --pretty=format: HEAD
+          git tag --contains HEAD | grep '^rp_sandbox_a-'
