@@ -14,6 +14,9 @@ jobs:
     name: Release-plz
     runs-on: ubuntu-latest
 
+    outputs:
+      release-tag: ${{ steps.sniff-release-tag.outputs.tag }}
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -40,6 +43,10 @@ jobs:
             sed 's/origin\///' |\
             xargs -I {} git push origin --delete {}
 
+      - name: Identify rp-sandbox-a release
+        id: sniff-release-tag
+        run: |
+            echo tag=`git tag --contains HEAD | grep '^rp_sandbox_a-'` >> "$GITHUB_OUTPUT" || true
 
   inspect-release:
     name: Inspect recent release
@@ -49,10 +56,11 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          token: ${{ secrets.RELEASE_PLZ_TOKEN }}
+        if: ${{ needs.release-plz.outputs.release-tag }}
 
-      - name: Look for release tag for rp_sandbox_a
+      - name: Debug TAG output
+        if: ${{ needs.release-plz.outputs.release-tag }}
+        env:
+          TAG: ${{ needs.release-plz.outputs.release-tag }}
         run: |
-          git tag --contains HEAD | grep '^rp_sandbox_a-'
+          echo Doing the thing with tag $TAG
