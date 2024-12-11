@@ -40,9 +40,19 @@ jobs:
             sed 's/origin\///' |\
             xargs -I {} git push origin --delete {}
 
+
+  inspect-release:
+    name: Inspect recent release
+    runs-on: ubuntu-latest
+    needs: release-plz
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.RELEASE_PLZ_TOKEN }}
+
       - name: Identify release tag
-        env:
-          RELEASES: ${{ steps.release-plz.outputs.releases }}
         run: |
-          echo "TO DO: Identify release tag, if any"
-          echo $RELEASES
+          git --no-pager show --name-only --pretty=format: HEAD
