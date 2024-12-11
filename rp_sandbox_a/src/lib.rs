@@ -10,6 +10,10 @@ pub fn add7(n: u64) -> u64 {
     n + 7
 }
 
+pub fn add9(n: u64) -> u64 {
+    n + 9
+}
+
 pub fn subtract(left: i64, right: i64) -> i64 {
     left - right
 }
