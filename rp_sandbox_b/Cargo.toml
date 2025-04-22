@@ -2,7 +2,7 @@
 name = "rp_sandbox_b"
 description = "Testing project -- please ignore"
 license = "MIT OR Apache-2.0"
-version = "0.3.2"
+version = { workspace = true }
 edition = "2021"
 
 [dependencies]
