@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.11.0](https://github.com/scouten-adobe/rp-sandbox/compare/rp_sandbox_a-v0.10.0...rp_sandbox_a-v0.11.0)
+_07 July 2025_
+
+### Added
+
+* Use workspace versioning for all crates in the repo ([#50](https://github.com/scouten-adobe/rp-sandbox/pull/50))
+
 ## [0.10.0](https://github.com/scouten-adobe/rp-sandbox/compare/rp_sandbox_a-v0.9.0...rp_sandbox_a-v0.10.0)
 _07 July 2025_
 
