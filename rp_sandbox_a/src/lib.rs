@@ -2,6 +2,10 @@ pub fn add(left: u64, right: u64) -> u64 {
     left + right
 }
 
+pub fn add_magic_number(n: u64) -> u64 {
+    n + 42
+}
+
 pub fn add3(n: u64) -> u64 {
     n + 3
 }
