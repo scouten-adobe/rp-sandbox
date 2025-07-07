@@ -6,4 +6,4 @@ version = { workspace = true }
 edition = "2021"
 
 [dependencies]
-rp_sandbox_a = { path = "../rp_sandbox_a", version = "0.9.0" }
+rp_sandbox_a = { path = "../rp_sandbox_a", version = "0.10.0" }
