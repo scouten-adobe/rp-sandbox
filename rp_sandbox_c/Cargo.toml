@@ -2,8 +2,8 @@
 name = "rp_sandbox_c"
 description = "Testing project -- please ignore"
 license = "MIT OR Apache-2.0"
-version = "0.11.0"
+version = "0.12.0"
 edition = "2021"
 
 [dependencies]
-rp_sandbox_a = { path = "../rp_sandbox_a", version = "0.11.0" }
+rp_sandbox_a = { path = "../rp_sandbox_a", version = "0.12.0" }

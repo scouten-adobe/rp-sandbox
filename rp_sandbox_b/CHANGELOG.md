@@ -6,6 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.12.0](https://github.com/scouten-adobe/rp-sandbox/compare/rp_sandbox_b-v0.11.0...rp_sandbox_b-v0.12.0)
+_08 July 2025_
+
+### Added
+
+* Remove `test_add_more_magic` ([#53](https://github.com/scouten-adobe/rp-sandbox/pull/53))
+
+### Fixed
+
+* Try using version groups ([#54](https://github.com/scouten-adobe/rp-sandbox/pull/54))
+
 ## [0.3.2](https://github.com/scouten-adobe/rp-sandbox/compare/rp_sandbox_b-v0.3.1...rp_sandbox_b-v0.3.2)
 _03 December 2024_
 
