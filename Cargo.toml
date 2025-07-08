@@ -1,6 +1,3 @@
 [workspace]
 resolver = "2"
 members = ["rp_sandbox_a", "rp_sandbox_b", "rp_sandbox_c"]
-
-[workspace.package]
-version = "0.11.0"
