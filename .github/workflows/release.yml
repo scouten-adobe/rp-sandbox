@@ -44,9 +44,11 @@ jobs:
             xargs -I {} git push origin --delete {}
 
       - name: Debug release-plz outputs
+        env:
+          RELEASES: ${{ steps.release-plz.outputs }}
         run: |
           echo "=== Release-plz outputs ==="
-          echo "RP output: ${{ toJSON(steps.release-plz.outputs) }}"
+          echo "RP output: $RELEASES"
           echo "========================="
 
       - name: Force update of rp_sandbox-b if only rp_sandbox_a is updated
