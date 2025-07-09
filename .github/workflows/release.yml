@@ -51,15 +51,15 @@ jobs:
           echo "RP output: $PR"
           echo "========================="
 
-      - name: Force update of rp_sandbox-b if only rp_sandbox_a is updated
-        if: ${{ contains(steps.release-plz.outputs.releases, 'rp_sandbox_a') && !contains(steps.release-plz.outputs.releases, 'rp_sandbox_b') }}
+      - name: Force update of rp_sandbox_b if only rp_sandbox_a is updated
+        if: ${{ contains(steps.release-plz.outputs.pr, 'rp_sandbox_a') && !contains(steps.release-plz.outputs.pr, 'rp_sandbox_b') }}
         run: |
           # Ensure we're on a clean main branch
           git checkout main
           git pull origin main
           
           # Extract the new version of rp_sandbox_a from the release PR output
-          NEW_VERSION=$(echo '${{ steps.release-plz.outputs.releases }}' | grep -oE 'rp_sandbox_a-[0-9]+\.[0-9]+\.[0-9]+' | head -1 | sed 's/rp_sandbox_a-//')
+          NEW_VERSION=$(echo '${{ steps.release-plz.outputs.pr }}' | grep -oE 'rp_sandbox_a-[0-9]+\.[0-9]+\.[0-9]+' | head -1 | sed 's/rp_sandbox_a-//')
           
           # Add a comment to the lib.rs file to trigger a change
           echo "// Updated to use rp_sandbox_a $NEW_VERSION" >> rp_sandbox_b/src/lib.rs
