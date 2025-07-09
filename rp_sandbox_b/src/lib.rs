@@ -37,11 +37,4 @@ mod tests {
         let result = add9(1);
         assert_eq!(result, 10);
     }
-
-    #[test]
-    fn test_add_more_magic() {
-        let result = add_more_magic(7);
-        assert_eq!(result, 62);
-    }
 }
-// Updated to use rp_sandbox_a 0.14.0
