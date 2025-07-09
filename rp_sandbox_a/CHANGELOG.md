@@ -6,6 +6,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.14.0](https://github.com/scouten-adobe/rp-sandbox/compare/rp_sandbox_a-v0.13.0...rp_sandbox_a-v0.14.0)
+_09 July 2025_
+
+### Added
+
+* This API goes to 11! ([#60](https://github.com/scouten-adobe/rp-sandbox/pull/60))
+
+## [0.13.0](https://github.com/scouten-adobe/rp-sandbox/compare/rp_sandbox_a-v0.12.0...rp_sandbox_a-v0.13.0)
+_08 July 2025_
+
+### Added
+
+* Add new fn add10 ([#58](https://github.com/scouten-adobe/rp-sandbox/pull/58))
+
+## [0.12.0](https://github.com/scouten-adobe/rp-sandbox/compare/rp_sandbox_a-v0.11.0...rp_sandbox_a-v0.12.0)
+_08 July 2025_
+
+### Fixed
+
+* Try using version groups ([#54](https://github.com/scouten-adobe/rp-sandbox/pull/54))
+
 ## [0.11.0](https://github.com/scouten-adobe/rp-sandbox/compare/rp_sandbox_a-v0.10.0...rp_sandbox_a-v0.11.0)
 _07 July 2025_
 
