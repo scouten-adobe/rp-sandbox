@@ -44,3 +44,4 @@ mod tests {
         assert_eq!(result, 62);
     }
 }
+// Updated to use rp_sandbox_a 0.14.0
