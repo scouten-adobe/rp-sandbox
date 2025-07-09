@@ -3,7 +3,7 @@ pub fn add(left: u64, right: u64) -> u64 {
 }
 
 pub fn add_magic_number(n: u64) -> u64 {
-    n + 39
+    n + 84
 }
 
 pub fn add3(n: u64) -> u64 {
