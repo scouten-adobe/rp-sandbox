@@ -61,7 +61,7 @@ jobs:
           git pull origin main
           
           # Extract the new version of rp_sandbox_a from the release PR output JSON
-          NEW_VERSION=$(echo '$PR' | jq -r '.releases[] | select(.package_name == "rp_sandbox_a") | .version')
+          NEW_VERSION=$(echo "$PR" | jq -r '.releases[] | select(.package_name == "rp_sandbox_a") | .version')
           
           # Add a comment to the lib.rs file to trigger a change
           echo "// Updated to use rp_sandbox_a $NEW_VERSION" >> rp_sandbox_b/src/lib.rs
