@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.15.0](https://github.com/scouten-adobe/rp-sandbox/compare/rp_sandbox_b-v0.14.0...rp_sandbox_b-v0.15.0)
+_09 July 2025_
+
+### Added
+
+* Redefine "magic number" ([#52](https://github.com/scouten-adobe/rp-sandbox/pull/52))
+
 ## [0.14.0](https://github.com/scouten-adobe/rp-sandbox/compare/rp_sandbox_b-v0.13.0...rp_sandbox_b-v0.14.0)
 _09 July 2025_
 
