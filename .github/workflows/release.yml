@@ -43,6 +43,26 @@ jobs:
             sed 's/origin\///' |\
             xargs -I {} git push origin --delete {}
 
+      - name: Force update of rp_sandbox-b if only rp_sandbox_a is updated
+        if: ${{ contains(steps.release-plz.outputs.releases, 'rp_sandbox_a') && !contains(steps.release-plz.outputs.releases, 'rp_sandbox_b') }}
+        run: |
+          # Ensure we're on a clean main branch
+          git checkout main
+          git pull origin main
+          
+          # Extract the new version of rp_sandbox_a from the release PR output
+          NEW_VERSION=$(echo '${{ steps.release-plz.outputs.releases }}' | grep -oE 'rp_sandbox_a-[0-9]+\.[0-9]+\.[0-9]+' | head -1 | sed 's/rp_sandbox_a-//')
+          
+          # Add a comment to the lib.rs file to trigger a change
+          echo "// Updated to use rp_sandbox_a $NEW_VERSION" >> rp_sandbox_b/src/lib.rs
+          
+          # Configure git and commit the changes
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add rp_sandbox_b/src/lib.rs
+          git commit -m "chore: Pick up latest rp_sandbox_a"
+          git push origin main
+
       - name: Identify rp-sandbox-a release
         id: sniff-release-tag
         run: |
