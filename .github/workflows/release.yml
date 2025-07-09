@@ -43,6 +43,13 @@ jobs:
             sed 's/origin\///' |\
             xargs -I {} git push origin --delete {}
 
+      - name: Debug release-plz outputs
+        run: |
+          echo "=== Release-plz outputs ==="
+          echo "releases: ${{ steps.release-plz.outputs.releases }}"
+          echo "release_pr_output: ${{ steps.release-plz.outputs.release_pr_output }}"
+          echo "========================="
+
       - name: Force update of rp_sandbox-b if only rp_sandbox_a is updated
         if: ${{ contains(steps.release-plz.outputs.releases, 'rp_sandbox_a') && !contains(steps.release-plz.outputs.releases, 'rp_sandbox_b') }}
         run: |
