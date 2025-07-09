@@ -46,7 +46,7 @@ jobs:
       - name: Debug release-plz outputs
         run: |
           echo "=== Release-plz outputs ==="
-          echo "RP output: ${{ steps.release-plz.outputs }}"
+          echo "RP output: ${{ toJSON(steps.release-plz.outputs) }}"
           echo "========================="
 
       - name: Force update of rp_sandbox-b if only rp_sandbox_a is updated
