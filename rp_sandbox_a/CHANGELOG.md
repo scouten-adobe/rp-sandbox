@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.16.0](https://github.com/scouten-adobe/rp-sandbox/compare/rp_sandbox_a-v0.15.0...rp_sandbox_a-v0.16.0)
+_09 July 2025_
+
+### Added
+
+* Make the magic number bigger ([#67](https://github.com/scouten-adobe/rp-sandbox/pull/67))
+
 ## [0.15.0](https://github.com/scouten-adobe/rp-sandbox/compare/rp_sandbox_a-v0.14.0...rp_sandbox_a-v0.15.0)
 _09 July 2025_
 
