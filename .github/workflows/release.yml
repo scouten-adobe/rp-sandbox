@@ -45,10 +45,10 @@ jobs:
 
       - name: Debug release-plz outputs
         env:
-          RELEASES: ${{ steps.release-plz.outputs }}
+          PR: ${{ steps.release-plz.outputs.pr }}
         run: |
           echo "=== Release-plz outputs ==="
-          echo "RP output: $RELEASES"
+          echo "RP output: $PR"
           echo "========================="
 
       - name: Force update of rp_sandbox-b if only rp_sandbox_a is updated
